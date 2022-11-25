@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3.GymManagerController">
+    <tabs>
+        <Tab fx:id="Output_Message" text="Add/Remove Member">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <GridPane layoutX="25.0" layoutY="28.0" prefHeight="68.0" prefWidth="550.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Text fx:id="FirstName" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="Input_First_Name" prefHeight="26.0" prefWidth="144.0" GridPane.rowIndex="1" />
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" GridPane.columnIndex="1">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="Input_Last_Name" prefHeight="26.0" prefWidth="167.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" GridPane.columnIndex="2">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <DatePicker fx:id="Input_Date_of_Birth" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                            </children>
+                        </GridPane>
+                        <GridPane layoutX="23.0" layoutY="108.0" prefHeight="141.0" prefWidth="183.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type of Membership">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <RadioButton fx:id="Standard_Membership" mnemonicParsing="false" text="Standard Membership" GridPane.rowIndex="1">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="group" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="Family_Membership" mnemonicParsing="false" text="Family Membership" toggleGroup="$group" GridPane.rowIndex="2" />
+                                <RadioButton fx:id="Premium_Membership" mnemonicParsing="false" text="Premium Membership" toggleGroup="$group" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                        <GridPane layoutX="206.0" layoutY="105.0" prefHeight="147.0" prefWidth="367.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location of Gym">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="Input_Location_of_Gym" prefHeight="26.0" prefWidth="357.0" GridPane.rowIndex="1" />
+                                <Button fx:id="Add_Member_Button" mnemonicParsing="false" onAction="#addMemberButton" prefHeight="26.0" prefWidth="374.0" text="Add Member" GridPane.rowIndex="2" />
+                                <Button fx:id="Remove_Member" mnemonicParsing="false" onAction="#removeMemberButton" prefHeight="26.0" prefWidth="379.0" text="Remove Member" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                        <GridPane layoutX="23.0" layoutY="244.0" prefHeight="102.0" prefWidth="554.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output Message">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="538.0">
+                                 <children>
+                                    <TextArea fx:id="Input_Output_Message" layoutY="-2.0" prefHeight="53.0" prefWidth="552.0" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                            </children>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="Output_Message_CheckIn" text="Check-In/Drop">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <GridPane layoutX="27.0" layoutY="37.0" prefHeight="61.0" prefWidth="545.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" GridPane.columnIndex="1">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" GridPane.columnIndex="2">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="Input_First_Name_CheckIn" prefHeight="26.0" prefWidth="138.0" GridPane.rowIndex="1" />
+                                <TextField fx:id="Input_Last_Name_CheckIn" prefHeight="26.0" prefWidth="138.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <DatePicker fx:id="Input_Date_of_Birth_CheckIn" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                            </children>
+                        </GridPane>
+                        <GridPane layoutX="218.0" layoutY="103.0" prefHeight="159.0" prefWidth="354.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="38.000006103515624" minHeight="10.0" prefHeight="35.60001220703125" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="51.599981689453124" minHeight="10.0" prefHeight="45.19998779296875" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location of Gym">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="Input_Location_of_Gym_CheckIn" prefHeight="26.0" prefWidth="357.0" GridPane.rowIndex="1" />
+                                <Button fx:id="Check_In" mnemonicParsing="false" onAction="#checkInButton" prefHeight="26.0" prefWidth="374.0" text="Check-In Member" GridPane.rowIndex="2" />
+                                <Button fx:id="Drop_Member" mnemonicParsing="false" onAction="#dropButton" prefHeight="26.0" prefWidth="379.0" text="Drop Member" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                        <GridPane layoutX="27.0" layoutY="104.0" prefHeight="119.0" prefWidth="174.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Instructor Name">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Class Type" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="Input_Instructor_Name_CheckIn" prefHeight="26.0" prefWidth="138.0" GridPane.rowIndex="1" />
+                                <TextField fx:id="Input_Class_Type_CheckIn" prefHeight="26.0" prefWidth="138.0" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                        <GridPane layoutX="26.0" layoutY="248.0" prefHeight="102.0" prefWidth="548.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output Message">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="535.0">
+                                 <children>
+                                    <TextArea fx:id="Input_Output_Message_CheckIn" layoutY="-1.0" prefHeight="52.0" prefWidth="546.0" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                            </children>
+                        </GridPane>
+                  <Label layoutX="27.0" layoutY="232.0" text="Guest?">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="Guest" layoutX="94.0" layoutY="238.0" mnemonicParsing="false" text="Yes">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="guestGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="NotGuest" layoutX="146.0" layoutY="238.0" mnemonicParsing="false" text="No" toggleGroup="$guestGroup" />
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+
+        <Tab text="Display">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ScrollPane fx:id="DisplayOutput" layoutX="13.0" layoutY="109.0" prefHeight="247.0" prefWidth="571.0">
+                            <content>
+                                <TextArea fx:id="displayOutput" prefHeight="244.0" prefWidth="566.0" />
+                            </content>
+                        </ScrollPane>
+                        <GridPane layoutX="14.0" layoutY="25.0" prefHeight="68.0" prefWidth="570.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Button fx:id="Load_Class" mnemonicParsing="false" onAction="#loadClasses" prefHeight="26.0" prefWidth="278.0" text="Load Fitness Classes" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Button fx:id="Display_Members" mnemonicParsing="false" onAction="#displayMembers" prefHeight="26.0" prefWidth="279.0" text="Display Members" />
+                                <Button fx:id="Load_Members" mnemonicParsing="false" onAction="#loadMembers" prefHeight="26.0" prefWidth="279.0" text="Load Members" GridPane.rowIndex="1" />
+                                <Button fx:id="Class_Display" mnemonicParsing="false" onAction="#displayClasses" prefHeight="26.0" prefWidth="278.0" text="Display Class" GridPane.columnIndex="1" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+
+        <Tab text="Sort Display">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ScrollPane fx:id="sort_Display_Output" layoutX="240.0" layoutY="12.0" prefHeight="340.0" prefWidth="345.0">
+                            <content>
+                                <TextArea fx:id="SortOutput" prefHeight="338.0" prefWidth="341.0" />
+                            </content>
+                        </ScrollPane>
+                        <GridPane layoutX="13.0" layoutY="14.0" prefHeight="338.0" prefWidth="206.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Button fx:id="Display_Members_By_Name" mnemonicParsing="false" onAction="#displayMembersByName" prefHeight="26.0" prefWidth="215.0" text="Display Members by Name" />
+                                <Button fx:id="Display_Members_by_Expiration" mnemonicParsing="false" onAction="#printByExpirationDate" prefHeight="26.0" prefWidth="215.0" text="Display Members by Expiration" GridPane.rowIndex="1" />
+                                <Button fx:id="Display_Members_by_County" maxWidth="250.0" minWidth="215.0" mnemonicParsing="false" onAction="#displayMembersByCounty" prefHeight="26.0" prefWidth="215.0" text="Display Members by County" GridPane.rowIndex="2" />
+                                <Button fx:id="Display_Members_with_Fees" maxWidth="250.0" minWidth="215.0" mnemonicParsing="false" onAction="#printWithMembership" prefHeight="26.0" prefWidth="215.0" text="Display Members with Fees" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
